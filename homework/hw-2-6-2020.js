@@ -191,5 +191,9 @@ function sortNamesByLength (names) {
     sortedNames.pop(); //we remove the last element since will always be blank using this function b/c of us adding a ',' to the last name earlier.
     return sortedNames;
 }
-console.log(sortNamesByLength(people));
+// console.log(sortNamesByLength(people));
 
+//OR ----------------------------------------------------------
+
+let method2 = people.sort(function(a, b){return a-b});
+console.log(method2);
