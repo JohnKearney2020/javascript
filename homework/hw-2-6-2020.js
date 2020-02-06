@@ -177,24 +177,19 @@ var people = [ 'Dom', 'Lyn', 'Kirk', 'Autumn', 'Trista', 'Jesslyn', 'Kevin', 'Jo
 function sortNamesByLength (names) {
     sortedNames = '';
     count = 0;
-    for (each_name of people) { 
+    for (each_name of people) {  //loop thru our list of people's names one at a time
         count++; 
-        let tempListOfPeople = people.filter(function(each_name){
+        let tempArrayOfPeople = people.filter(function(each_name){
             return each_name.length == count;
-        })
-        if (tempListOfPeople.length > 0) {
-            sortedNames += tempListOfPeople.join();
-            sortedNames += ',';
+        }) //this holds all names of length 1, then all names of length 2, etc. etc. with each loop
+        if (tempArrayOfPeople.length > 0) { //we skip the lengths not present in our array of names
+            sortedNames += tempArrayOfPeople.join(); //we turn our temp array of names into a string and add it to our sorted names string
+            sortedNames += ','; //we have to add this to the last name in the string each loop so it is seperated properly from the first name of the next loop
         }
     }
-    sortedNames = sortedNames.split(',');
-    sortedNames.pop(); //we remove the last element since it's blank
+    sortedNames = sortedNames.split(','); //we turn our string of names back into an array, seperated by commas
+    sortedNames.pop(); //we remove the last element since will always be blank using this function b/c of us adding a ',' to the last name earlier.
     return sortedNames;
 }
 console.log(sortNamesByLength(people));
 
-
-
-// let nameLength = people.filter(each_name) {
-
-// }
