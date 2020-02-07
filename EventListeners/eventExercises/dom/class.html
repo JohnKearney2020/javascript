@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/c05.css">
+</head>
+<body>
+    
+    <div>
+
+    </div>
+
+    <script>
+
+        function liTag(className, innerHTML, idName){
+
+            var li = document.createElement('li');
+            li.id = idName;
+            li.className = className;
+            li.innerHTML = innerHTML;
+
+            return li
+
+        }
+
+
+        var mainDiv = document.getElementsByTagName('div')[0]
+
+        var h1 = document.createElement('h1');
+        h1.textContent = "List"
+        h1.id = "page"
+
+        mainDiv.appendChild(h1);
+
+        var h2 = document.createElement('h2');
+        h2.textContent  = 'Buy groceries';
+
+        mainDiv.appendChild(h2);
+
+        var ul = document.createElement('ul');
+
+        
+        var li1 = liTag("hot", "<em>fresh</em> figs", "one")
+
+        ul.appendChild(li1);
+
+        var li2 = liTag("hot", "pine nuts", "two")
+
+        ul.appendChild(li2)
+
+        mainDiv.appendChild(ul);
+
+        
+    </script>
+</body>
+</html>

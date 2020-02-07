@@ -240,6 +240,31 @@
 // }
 // sortArayByIndexSums(myArray);
 
+//================================
+//OR - 9 - alternate way
+//================================
+
+//9.
+// function sumArr(total, num) {
+//   return total + num;
+// }
+// function compareArr(a, b) {
+//   var A = a.reduce(sumArr);
+//   var B = b.reduce(sumArr);
+//   return A - B;
+// }
+// function sortArr(arr) {
+//   return arr.sort(compareArr);
+// }
+// var arr = [
+//   [1, 3, 4],
+//   [3, 6],
+//   [2, 4, 6, 8]
+// ];
+// console.log(sortArr(arr));
+
+
+
 //===================================
 //        10 - 3 times
 //===================================
