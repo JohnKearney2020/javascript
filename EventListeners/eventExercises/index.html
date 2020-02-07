@@ -20,7 +20,39 @@
 
   
   <script>
-
+    let ul = document.querySelector('ul');
+    ul.addEventListener('click', function(e) {
+        console.log(e.target.id); //this puts this info in the console log
+        switch(e.target.id) {
+          case 'yellow':
+            alert('yellow image clicked');
+            break;
+          case 'orange':
+            alert('orange image clicked');
+            break;
+          case 'purple':
+            alert('purple image clicked');
+            break;
+          case 'blue':
+            alert('blue image clicked');
+            break;
+          case 'pink':
+            alert('pink image clicked');
+            break;
+          case 'green':
+            alert('green image clicked');
+            break;
+          case 'ygreen':
+            alert('ygreen image clicked');
+            break;
+          case 'gray':
+            alert('gray image clicked');
+            break;
+          case 'red':
+            alert('red image clicked');
+            break;
+        }
+      });
     
   </script>
 

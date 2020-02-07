@@ -11,7 +11,8 @@
       <form method="post" action="http://www.example.org/register">
 
         <label for="username">Create a username: </label>
-        <input type="text" id="username" onblur="checkUsername()" />
+        <!-- <input type="text" id="username" onblur="checkUsername()" /> -->
+        <input type="text" id="username"/>
         <div id="feedback"></div>
 
         <label for="password">Create a password: </label>
@@ -22,7 +23,22 @@
       </form>
     </div>
     
+    <script>
+      let feedback = document.getElementById('feedback');
+      let input = document.getElementById('username');
+      input.addEventListener('blur', function(e) { //an element has lost focus
+        // console.log(e)
+        if (e.target.value.length < 5) {
+          feedback.textContent = 'Username must be 5 characters or more';
+        } 
+        else {
+          feedback.textContent = '';
+        }
+      })
 
-    
+    </script>
+
+
+    </script>
   </body>
 </html>
