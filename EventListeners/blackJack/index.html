@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Black Jack</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- my CSS -->
+    <link rel="stylesheet" href="../blackJack/blackJack.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    
+<div id="table" class="container-fluid">
+    <!-- Dealer's part of table -->
+    <div class="row">
+        <div class="col">
+            <h1 class="display-3 text-white">Dealer: <span id="dealerPoints">12</span></h1>
+        </div>
+    </div>
+    
+    <div class="row cardRow m-5 rounded-lg" id="dealerLine">
+        <div class="col-12">
+            <!-- <div id="messages"><h1></h1></div>        -->
+            <div id="dealer-hand" class="hand">
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- Player's part of table -->
+    <div class="row">
+        <div class="col">
+            <h1 class="display-3 text-white">Player: <span id="playerPoints">14</span></h1>
+            <!-- <label>Player: </label>
+            <label id="player-points" class="points">100</label> -->
+        </div>
+    </div>
+    <div class="row cardRow mx-5 rounded-lg" id="playerLine">
+        <div class="col-12">
+            <div id="player-hand" class="hand">            
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="row align-items-start justify-content-center m-5">
+        <button type="button" class="btn btn-success btn-lg mx-1">Deal</button>
+        <button type="button" class="btn btn-success btn-lg mx-1">Hit</button>
+        <button type="button" class="btn btn-success btn-lg mx-1">Stand</button>
+        <!-- <div class="col-1">
+            <button type="button" class="btn btn-success btn-lg">Deal</button>
+            <button type="button" class="btn btn-success btn-lg">Hit</button>
+            <button type="button" class="btn btn-success btn-lg">Stand</button>
+        </div> -->
+        <!-- <div class="col-1">
+            <button type="button" class="btn btn-success btn-lg">Hit</button>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-success btn-lg">Stand</button>
+        </div> -->
+    </div>
+        
+</div>    
+
+
+    <script src="../blackJack/js/blackJackJS.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

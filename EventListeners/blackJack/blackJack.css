@@ -1,0 +1,28 @@
+body {
+	background: url(../blackJack/imgs/backgrounds/esteban-lopez-OfdFHy1zxjQ-unsplash.jpg) center center / cover
+		no-repeat;
+	/* background: url(../blackJack/imgs/jack-hamilton-9SewS6lowEU-unsplash.jpg) center center / cover no-repeat; */
+}
+
+span {
+	color: #ea1c2c;
+	/* font-size: 4rem; */
+	font-weight: 400;
+}
+
+.cardRow {
+	background-color: rgb(218, 230, 224);
+	border: solid black;
+	height: 20vh;
+	width: 90vw;
+	/* border-radius:; */
+}
+
+/* .row {
+	height: 20vh;
+	width: 90vw;
+} */
+
+/* .button {
+	margin: 3rem;
+} */
