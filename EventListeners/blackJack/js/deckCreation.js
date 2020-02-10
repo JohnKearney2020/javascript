@@ -268,12 +268,17 @@ let card50 = { suit: 'Diamonds', value: 11, imageURL: 'images/AD.jpg' };
 let card51 = { suit: 'Hearts', value: 11, imageURL: 'images/AH.jpg' };
 let card52 = { suit: 'Spades', value: 11, imageURL: 'images/AS.jpg' };
 
-var varToPush = '';
-for (let i = 1; i <= 52; i++) {
-	// window[varToPush] = 'card' + i.toString();
-	varToPush = eval('card' + i.toString());
-	deckOfCards.push(varToPush);
+function generateNewDeck () {
+	newDeckOfCards = []; //clear our existing deck to make a new one
+	var varToPush = '';
+	for (let i = 1; i <= 52; i++) {
+		// window[varToPush] = 'card' + i.toString();
+		varToPush = eval('card' + i.toString());
+		newDeckOfCards.push(varToPush);
+	}
+	return newDeckOfCards;
 }
+deckOfCards = generateNewDeck();
 // console.log(deckOfCards);
 
 
@@ -300,7 +305,8 @@ function shuffle(arrayToShuffle) {
 	return arrayToShuffle;	
 };
 
-shuffle(deckOfCards) //our deck of cards has been shuffled :)
+
+shuffle(deckOfCards); //our deck of cards has been shuffled :)
 // console.log(shuffle(deckOfCards));
 
 

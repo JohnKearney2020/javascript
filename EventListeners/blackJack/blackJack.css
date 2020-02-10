@@ -1,7 +1,6 @@
 body {
 	background: url(../blackJack/images/backgrounds/esteban-lopez-OfdFHy1zxjQ-unsplash.jpg) center center / cover
-		no-repeat;
-	/* background: url(../blackJack/imgs/jack-hamilton-9SewS6lowEU-unsplash.jpg) center center / cover no-repeat; */
+		;
 }
 
 span {
@@ -27,12 +26,3 @@ span {
 	width: 0.7045*height;
 	transition: image 500ms;
 }
-
-/* .row {
-	height: 20vh;
-	width: 90vw;
-} */
-
-/* .button {
-	margin: 3rem;
-} */

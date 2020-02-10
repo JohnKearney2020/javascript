@@ -12,6 +12,7 @@ let playersSecondCard = '';
 var dealersFirstCard = '';
 var dealersSecondCard = '';
 var limitInputs = true; //players can initially only deal cards
+
 	// let bustCheck = 0;
 
 	// let testArray = [11, 11];
@@ -29,7 +30,7 @@ function checkHandValue(handArray) {
 	if (defaultSum > 21 && aceCount == 0) {//if there are no aces and the sum is > 21, return the sum.The player has lost.
 		return defaultSum;
 	}
-	else if (defaultSum < 21) { //if the default sum < 21 the player is fine
+	else if (defaultSum <= 21) { //if the default sum < 21 the player is fine
 		return defaultSum;
 	}
 	else { //only option left is a defaultSum > 21 with one or more aces
@@ -55,18 +56,24 @@ function checkHandValue(handArray) {
 
 function bustCheckPlayer (handValue) {
 	if (handValue > 21) {
-		alert("Oh no! You busted! Your hand value: " + handValue);
-
+		setTimeout(function(){
+			alert("Oh no! You busted! Your hand value: " + handValue);
+		}, 500);
+		limitInputs = true;
 	}
 }
 
-// ---------------------------------------------- Deal ----------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+// ******************************************************** Deal *******************************************************
+//----------------------------------------------------------------------------------------------------------------------
 document.getElementById("btnDeal").addEventListener("click", function(e){
-	//write dealer logic here
-	//cards are dealt to the players first
+	deckOfCards = generateNewDeck();
+	shuffle(deckOfCards) //we want to shuffle our deck deach time the player clicks deal
+	console.log(deckOfCards);
 	playersCardValues = [];
 	playerPointValue = 0;
 	dealersCardValues = []; 
+	//cards are dealt to the players first
 	// ------------------------------------- player's first card --------------------------------------------
 	playersFirstCard = deckOfCards[deckOfCards.length-1]; //the 'top' card of the deck is the player's first card
 	deckOfCards.pop(); //remove the player's first card from the deck
@@ -120,10 +127,51 @@ document.getElementById("btnDeal").addEventListener("click", function(e){
 	var dealerHiddenCardImage = dealersSecondCard.imageURL;
 	dealersCardValues.push(dealersSecondCard.value);
 	limitInputs = false; 
+
+	//----------------------------------------- Naturals Check -----------------------------------------
+	dealerPointValue = checkHandValue(dealersCardValues);
+	if (playerPointValue == 21 && dealerPointValue == 21){
+		setTimeout(function(){
+			alert("It's a tie. Both dealer and player got naturals.");
+		}, 500);
+		//start by revealing the dealers hidden card
+		dealersFirstCardHTML = '<img class="cardImage" src=' + '"' + dealersFirstCard.imageURL + '"' + ' alt="">' + '</img>';
+		dealersHand.innerHTML = dealersFirstCardHTML;
+		dealersSecondCardHTML = '<img class="cardImage" src=' + '"' + dealersSecondCard.imageURL + '"' + ' alt="">' + '</img>';
+		dealersHand.innerHTML = dealersHand.innerHTML + dealersSecondCardHTML;
+		dealerPoints.innerText = dealerPointValue;
+		limitInputs = true;
+	} else if (playerPointValue == 21) {
+		setTimeout(function(){
+			alert("You got a natural! You win!");
+		}, 500);
+		//start by revealing the dealers hidden card
+		dealersFirstCardHTML = '<img class="cardImage" src=' + '"' + dealersFirstCard.imageURL + '"' + ' alt="">' + '</img>';
+		dealersHand.innerHTML = dealersFirstCardHTML;
+		dealersSecondCardHTML = '<img class="cardImage" src=' + '"' + dealersSecondCard.imageURL + '"' + ' alt="">' + '</img>';
+		dealersHand.innerHTML = dealersHand.innerHTML + dealersSecondCardHTML;
+		dealerPoints.innerText = dealerPointValue;
+		limitInputs = true;
+	} else if (dealerPointValue == 21) {
+		setTimeout(function(){
+			alert("The dealer got a natural. You lose!");
+		}, 500);
+		//start by revealing the dealers hidden card
+		dealersFirstCardHTML = '<img class="cardImage" src=' + '"' + dealersFirstCard.imageURL + '"' + ' alt="">' + '</img>';
+		dealersHand.innerHTML = dealersFirstCardHTML;
+		dealersSecondCardHTML = '<img class="cardImage" src=' + '"' + dealersSecondCard.imageURL + '"' + ' alt="">' + '</img>';
+		dealersHand.innerHTML = dealersHand.innerHTML + dealersSecondCardHTML;
+		dealerPoints.innerText = dealerPointValue;
+		limitInputs = true;
+	}
 	
 });
 
 
+
+//----------------------------------------------------------------------------------------------------------------------
+// ******************************************************** HIT ********************************************************
+//----------------------------------------------------------------------------------------------------------------------
 document.getElementById("btnHit").addEventListener("click", function(){
 	if (limitInputs == false) {
 		// ------------------------------------- player's hit card --------------------------------------------
@@ -148,7 +196,10 @@ document.getElementById("btnHit").addEventListener("click", function(){
 });
 
 
-// ---------------------------- Stand ------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------
+// ******************************************************** STAND ******************************************************
+//----------------------------------------------------------------------------------------------------------------------
 document.getElementById("btnStand").addEventListener("click", function(){
 	if (limitInputs == false) {
 		//start by revealing the dealers hidden card
@@ -177,11 +228,21 @@ document.getElementById("btnStand").addEventListener("click", function(){
 		}
 
 		if (dealerPointValue > 21) {
-			alert('You win! Dealer busted.')
+		setTimeout(function(){
+			alert('You win! Dealer busted.');
+		}, 500);
 		} else if (dealerPointValue < playerPointValue) {
-			alert('You win!')
+			setTimeout(function(){
+				alert('You win!');
+			}, 500);
 		} else if (dealerPointValue == playerPointValue) {
-			alert("It's a tie.")
+			setTimeout(function(){
+				alert("It's a tie.");
+			}, 500);
+		} else if(dealerPointValue > playerPointValue) {
+			setTimeout(function(){
+				alert('You lose.');
+			}, 500);
 		}
 	}
 	limitInputs = true;
