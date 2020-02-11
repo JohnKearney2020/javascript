@@ -1,20 +1,27 @@
 body {
 	background: url(../blackJack/images/backgrounds/esteban-lopez-OfdFHy1zxjQ-unsplash.jpg) center center / cover
-		;
+		no-repeat;
 }
 
 span {
-	color: #ea1c2c;
+	/* color: #ea1c2c; */
+	color: #ff0015;
 	/* font-size: 4rem; */
 	font-weight: 400;
+}
+
+h1 {
+	font-weight: 400;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;	
 }
 
 .cardRow {
 	background-color: rgb(218, 230, 224);
 	border: solid black;
 	height: 20vh;
-	width: 90vw;
-	/* border-radius:; */
+	width: auto; 
+	/* width of auto lets the row take up the entire screen with margins */
 }
 .hand {
 	height: 100%; 
@@ -25,4 +32,9 @@ span {
 	height: 100%; 
 	width: 0.7045*height;
 	transition: image 500ms;
+}
+
+.alert {
+	width: 10vw; 
+	height: 10vh;
 }

@@ -17,12 +17,12 @@
 <div id="table" class="container-fluid">
     <!-- Dealer's part of table -->
     <div class="row">
-        <div class="col">
-            <h1 class="display-3 text-white">Dealer: <span id="dealerPoints"></span></h1>
+        <div class="col my-2">
+            <h1 class="display-2 text-white font-weight-normal">Dealer: <span id="dealerPoints"></span></h1>
         </div>
     </div>
     
-    <div class="row cardRow m-5 rounded-lg" id="dealerLine">
+    <div class="row cardRow mx-5 mb-5 rounded-lg" id="dealerLine">
         <div class="col-12" style="height: 100%; width: 100%;">
             <!-- <div id="messages"><h1></h1></div>        -->
             <div id="dealer-hand" class="hand">
@@ -33,8 +33,8 @@
 
     <!-- Player's part of table -->
     <div class="row">
-        <div class="col">
-            <h1 class="display-3 text-white">Player: <span id="playerPoints"></span></h1>
+        <div class="col mb-2">
+            <h1 class="display-2 text-white font-weight-normal">Player: <span id="playerPoints"></span></h1>
             <!-- <label>Player: </label>
             <label id="player-points" class="points">100</label> -->
         </div>
@@ -51,18 +51,8 @@
         <button type="button" class="btn btn-success btn-lg mx-1" id="btnDeal">Deal</button>
         <button type="button" class="btn btn-success btn-lg mx-1" id="btnHit">Hit</button>
         <button type="button" class="btn btn-success btn-lg mx-1" id="btnStand">Stand</button>
-        <!-- <div class="col-1">
-            <button type="button" class="btn btn-success btn-lg">Deal</button>
-            <button type="button" class="btn btn-success btn-lg">Hit</button>
-            <button type="button" class="btn btn-success btn-lg">Stand</button>
-        </div> -->
-        <!-- <div class="col-1">
-            <button type="button" class="btn btn-success btn-lg">Hit</button>
-        </div>
-        <div class="col-1">
-            <button type="button" class="btn btn-success btn-lg">Stand</button>
-        </div> -->
     </div>
+    <div id="alertDiv"></div>
         
 </div>    
 
@@ -73,5 +63,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>;
 </body>
 </html>

@@ -2,6 +2,8 @@ let playersHand = document.getElementById('player-hand');
 let playerPoints = document.getElementById('playerPoints');
 let dealersHand = document.getElementById('dealer-hand');
 let dealerPoints = document.getElementById('dealerPoints');
+// let alertDiv = document.getElementById('alertDiv');
+// alertDiv.className = "alert alert-success alert-dismissible fade show";
 var playersCardValues = [];
 var playerPointValue = 0;
 let dealerHiddenPoints = 0;
@@ -57,11 +59,13 @@ function checkHandValue(handArray) {
 function bustCheckPlayer (handValue) {
 	if (handValue > 21) {
 		setTimeout(function(){
-			alert("Oh no! You busted! Your hand value: " + handValue);
+			// alert("Oh no! You busted! Your hand value: " + handValue);
+			swal("You Lose", "You busted with " + handValue + " points", "error");
 		}, 500);
 		limitInputs = true;
 	}
 }
+
 
 //----------------------------------------------------------------------------------------------------------------------
 // ******************************************************** Deal *******************************************************
@@ -132,7 +136,8 @@ document.getElementById("btnDeal").addEventListener("click", function(e){
 	dealerPointValue = checkHandValue(dealersCardValues);
 	if (playerPointValue == 21 && dealerPointValue == 21){
 		setTimeout(function(){
-			alert("It's a tie. Both dealer and player got naturals.");
+			// alert("It's a tie. Both dealer and player got naturals.");
+			swal("It's a tie", "You and the dealer both got naturals (21 points on the opening hand)", "warning");
 		}, 500);
 		//start by revealing the dealers hidden card
 		dealersFirstCardHTML = '<img class="cardImage" src=' + '"' + dealersFirstCard.imageURL + '"' + ' alt="">' + '</img>';
@@ -143,7 +148,8 @@ document.getElementById("btnDeal").addEventListener("click", function(e){
 		limitInputs = true;
 	} else if (playerPointValue == 21) {
 		setTimeout(function(){
-			alert("You got a natural! You win!");
+			// alert("You got a natural! You win!");
+			swal("You win!", "You got a natural (21 points on the opening hand)", "success");
 		}, 500);
 		//start by revealing the dealers hidden card
 		dealersFirstCardHTML = '<img class="cardImage" src=' + '"' + dealersFirstCard.imageURL + '"' + ' alt="">' + '</img>';
@@ -154,7 +160,8 @@ document.getElementById("btnDeal").addEventListener("click", function(e){
 		limitInputs = true;
 	} else if (dealerPointValue == 21) {
 		setTimeout(function(){
-			alert("The dealer got a natural. You lose!");
+			// alert("The dealer got a natural. You lose!");
+			swal("You Lose!", "The dealer got a natural (21 points on the opening hand)", "error");
 		}, 500);
 		//start by revealing the dealers hidden card
 		dealersFirstCardHTML = '<img class="cardImage" src=' + '"' + dealersFirstCard.imageURL + '"' + ' alt="">' + '</img>';
@@ -229,19 +236,26 @@ document.getElementById("btnStand").addEventListener("click", function(){
 
 		if (dealerPointValue > 21) {
 		setTimeout(function(){
-			alert('You win! Dealer busted.');
+			// displayAlert();
+			// alert('You win! Dealer busted.');
+			swal("You win!", "The dealer busted with " + dealerPointValue + " points", "success");
+			
 		}, 500);
 		} else if (dealerPointValue < playerPointValue) {
 			setTimeout(function(){
-				alert('You win!');
+				// displayAlert();
+				// alert('You win!');
+				swal("You win!", "Your points: " + playerPointValue + ",     " + "Dealer Points: " + dealerPointValue, "success");
 			}, 500);
 		} else if (dealerPointValue == playerPointValue) {
 			setTimeout(function(){
-				alert("It's a tie.");
+				// alert("It's a tie.");
+				swal("It's a tie.", "Your points: " + playerPointValue + ",     " + "Dealer Points: " + dealerPointValue, "warning");
 			}, 500);
 		} else if(dealerPointValue > playerPointValue) {
 			setTimeout(function(){
-				alert('You lose.');
+				// alert('You lose.');
+				swal("You Lose!", "Your points: " + playerPointValue + ",     " + "Dealer Points: " + dealerPointValue, "error");
 			}, 500);
 		}
 	}
