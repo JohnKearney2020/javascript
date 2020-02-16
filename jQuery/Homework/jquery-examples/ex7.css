@@ -1,0 +1,20 @@
+/* this class gets toggle when the user clicks the checkbox */
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}
+
+.edit {
+	/* this puts the pencil icon into the list */
+	float: right;
+	background: url(images/edit.png) no-repeat;
+	width: 32px;
+	height: 32px;
+	display: block;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.hidden {
+	display: block;
+}
