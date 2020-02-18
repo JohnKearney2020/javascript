@@ -10,9 +10,71 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <ul>
+    <!-- Image / Card Gallery -->
+    <section id="gallery">
+        <div class="container">
+            <!-- we need a row to get the row of cards we want -->
+            <div class="row">
+                <!-- now we need a column div to hold ur first card -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../patternProject/imgs/pattern1.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">First Thing</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta eum voluptatum repudiandae corporis. Quia ratione architecto alias culpa sunt.</p>
+                            <!-- buttons -->
+                            <a href="" class="btn btn-outline-success btn-sm">Download</a>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../patternProject/imgs/pattern2.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">First Thing</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta eum voluptatum repudiandae corporis. Quia ratione architecto alias culpa sunt.</p>
+                            <!-- buttons -->
+                            <a href="" class="btn btn-outline-success btn-sm">Download</a>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../patternProject/imgs/pattern3.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">First Thing</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta eum voluptatum repudiandae corporis. Quia ratione architecto alias culpa sunt.</p>
+                            <!-- buttons -->
+                            <a href="" class="btn btn-outline-success btn-sm">Download</a>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../patternProject/imgs/pattern3.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">First Thing</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta eum voluptatum repudiandae corporis. Quia ratione architecto alias culpa sunt.</p>
+                            <!-- buttons -->
+                            <a href="" class="btn btn-outline-success btn-sm">Download</a>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
 
-    </ul>
+    </section>
+    
+
+
+
+
+
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -36,14 +98,15 @@
                 return response.json();
             })
             .then((weatherObj) => {
-                console.log(weatherObj.main.temp);
-                let celsius = Math.floor(weatherObj.main.temp - 273.15);
-                let fahrenheit = Math.floor((weatherObj.main.temp - 273.15) * (9/5) + 32);
-                console.log(`Celsius = ${celsius}`);
-                console.log(`Fahrenheit = ${fahrenheit}`);
+                console.log(weatherObj)
+                // console.log(weatherObj.main.temp);
+                // let celsius = Math.floor(weatherObj.main.temp - 273.15);
+                // let fahrenheit = Math.floor((weatherObj.main.temp - 273.15) * (9/5) + 32);
+                // console.log(`Celsius = ${celsius}`);
+                // console.log(`Fahrenheit = ${fahrenheit}`);
 
-                let body = document.querySelector('body');
-                body.innerHTML = celsius.toString();
+                // let body = document.querySelector('body');
+                // body.innerHTML = celsius.toString();
             })
     </script>
 </body>

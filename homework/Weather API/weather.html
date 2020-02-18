@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <!-- The search bar for a city -->
+    <section id="description">
+        <div class="containter">
+            <div class="row justify-content-center m-5">
+                <div class="col-3">
+                    <input id="citySearchBar" type="text" placeholder="Search city...">
+                    <button id="addButton">Get Weather</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image / Card Gallery -->
+    <section id="gallery">
+        <div class="container">
+            <!-- we need a row to get the row of cards we want -->
+            <div class="row mt-5">
+                <!-- now we need a column div to hold ur first card -->
+                <!-- ----------------------------------------------------------------------------------- -->
+                <!--                                  Temperature                                        -->
+                <!-- ----------------------------------------------------------------------------------- -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../Weather API/images/thermometer.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Current Temperature: <strong><span id="currentTempSpan"></span> °F</strong></h5>
+                            <p class="card-text">High: <strong><span id='currentHighSpan'></span> °F</strong></p>
+                            <p class="card-text">Low: <strong><span id='currentLowSpan'></span> °F</strong></p>
+                            <!-- buttons -->
+                            <a href="" class="btn btn-outline-success btn-sm">Next 5 Days</a>
+                            <a href="" class="btn btn-outline-success btn-sm">Month</a>
+                            <!-- <i href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------------------------- -->
+                <!--                                  Real-Feel                                          -->
+                <!-- ----------------------------------------------------------------------------------- -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../Weather API/images/realFeel.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Real Feel: <strong><span id="currentRealFeelSpan"></span> °F</strong></h5>
+                            <!-- buttons -->
+                            <!-- <a href="" class="btn btn-outline-success btn-sm">Download</a>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------------------------- -->
+                <!--                                  Humidity                                          -->
+                <!-- ----------------------------------------------------------------------------------- -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../Weather API/images/humidity.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Humidity: <strong><span id="currentHumiditySpan"></span>%</strong></h5>
+                            <!-- buttons -->
+                            <!-- <a href="" class="btn btn-outline-success btn-sm">Download</a>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- ----------------------------------------------------------------------------------- -->
+                <!--                                       Wind                                          -->
+                <!-- ----------------------------------------------------------------------------------- -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../Weather API/images/wind.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Wind: <strong><span id="currentWindSpeedSpan"></span></strong> mph</h5>
+                            <p class="card-text">From the <strong><span id='currentWindDirectionSpan'></span></strong> direction.</p>
+                            <!-- buttons -->
+                            <!-- <a href="" class="btn btn-outline-success btn-sm">Download</a>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+
+    </section>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- my js -->
+    <script src="../Weather API/weather.js"></script>
+
+</body>
+</html>
