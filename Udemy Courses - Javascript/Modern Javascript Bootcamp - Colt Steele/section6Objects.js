@@ -131,18 +131,18 @@
 // 	console.log(each_movie);
 // }
 
-// for (let movie of Object.keys(movieReviews)) {
-// 	//this will iterate over eavh key
-// 	console.log(movie, movieReviews[movie]); //need brackets since we are using a variable, .movie won't work
-// }
+for (let movie of Object.keys(movieReviews)) {
+	//this will iterate over eavh key
+	console.log(movie, movieReviews[movie]); //need brackets since we are using a variable, .movie won't work
+}
 
-// const ratings = Object.values(movieReviews);
-// let total = 0;
-// for (let each_rating of ratings) {
-// 	total += each_rating;
-// }
-// let avg = total / ratings.length;
-// console.log(avg);
+const ratings = Object.values(movieReviews);
+let total = 0;
+for (let each_rating of ratings) {
+	total += each_rating;
+}
+let avg = total / ratings.length;
+console.log(avg);
 
 //For in loops - for in loops work on objects
 const jeopardyWinnings = {
