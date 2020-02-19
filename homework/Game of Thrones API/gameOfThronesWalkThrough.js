@@ -2,7 +2,7 @@ var arrayOfCharNames = [];
 var arrayOfCharNamesCount = 0;
 let endLoop = false;
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 64; i++) {
 	fetch(`https://www.anapioficeandfire.com/api/characters?page=${i}&pageSize=10`)
 		.then((response) => {
 			return response.json();
