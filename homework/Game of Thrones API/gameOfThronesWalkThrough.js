@@ -1,13 +1,14 @@
-var arrayOfCharNames = [];
-var arrayOfCharNamesCount = 0;
-let endLoop = false;
+// var arrayOfCharNames = [];
+// var arrayOfCharNamesCount = 0;
+// let endLoop = false;
 
 for (let i = 1; i <= 64; i++) {
-	fetch(`https://www.anapioficeandfire.com/api/characters?page=${i}&pageSize=10`)
+	fetch(`https://www.anapioficeandfire.com/api/characters?page=${i}&pageSize=50`)
 		.then((response) => {
 			return response.json();
 		})
 		.then((characters_array) => {
+			// console.log(characters_array);
 			//characters_array is an array of 50 character objects
 			// console.log(characters_array);
 			for (let each_character_object of Object.keys(characters_array)) {
@@ -29,6 +30,7 @@ for (let i = 1; i <= 64; i++) {
 								return response.json();
 							})
 							.then((house_object) => {
+								// console.log(house_object);
 								charHouseName = house_object.name;
 								let houseRegion = house_object.region;
 								let ageOfFounding = house_object.founded;
@@ -60,6 +62,6 @@ for (let i = 1; i <= 64; i++) {
 
 //event listener for house info
 $('ul').on('click', 'li', function(event) {
-	// 	console.log($(this).children('.hidden'));
+// console.log($(this).children('.hidden'));
 	$(this).children('.hidden').toggleClass('hidden'); //this looks at the children of the clicked li, and selects the one with class of hidden
 });
